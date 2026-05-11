@@ -2119,7 +2119,7 @@ else()
 endif()
 
 set_target_properties(Telegram PROPERTIES
-    OUTPUT_NAME ${output_name}
+    OUTPUT_NAME "Impergram"
     MACOSX_BUNDLE_GUI_IDENTIFIER ${bundle_identifier}
     MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_SOURCE_DIR}/Telegram.plist
     XCODE_ATTRIBUTE_CODE_SIGN_ENTITLEMENTS "${CMAKE_CURRENT_SOURCE_DIR}/Telegram/${bundle_entitlements}"

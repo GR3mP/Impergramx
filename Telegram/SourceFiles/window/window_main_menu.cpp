@@ -384,7 +384,7 @@ MainMenu::MainMenu(
 	parentResized();
 
 	_telegram->setMarkedText(tr::link(
-		u"Telegram Desktop"_q,
+		u"Impergram Desktop"_q,
 		u"https://desktop.telegram.org"_q));
 	_telegram->setLinksTrusted();
 	_version->setMarkedText(
@@ -743,6 +743,18 @@ void MainMenu::setupMenu() {
 	)->setClickedCallback([=] {
 		controller->showSettings();
 	});
+
+	const auto lang = Lang::Id();
+	const auto r3mpText = (lang == "ru") 
+    ? u"Настройки Impergramx"_q 
+    : u"Impergramx preferences"_q;
+
+    addAction(
+        rpl::single(r3mpText),
+        { &st::menuIconSettings }
+    )->setClickedCallback([=] {
+        controller->showSettings();
+    });
 
 	_nightThemeToggle = addAction(
 		tr::lng_menu_night_mode(),
